@@ -1,0 +1,12 @@
+package com.senith.fuelqueue.repository;
+
+import com.senith.fuelqueue.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    // Find user by email (for login later)
+    Optional<User> findByEmail(String email);
+
+}
